@@ -9,7 +9,27 @@ Lapres Modul 2 Jarkom
 
 Semeru adalah salah satu gunung yang terkenal di Jawa Timur. Bibah adalah salah satu juru kunci Semeru. Bibah ingin menyebarkan keindahan Semeru pada dunia sehingga dia membeli 3 buah server yang berada di **MALANG**, **MOJOKERTO** dan **PROBOLINGGO**. Server MALANG akan digunakan sebagai DNS Server Master, **MOJOKERTO** akan digunakan sebagai DNS Server Slave dan **PROBOLINGGO** akan digunakan sebagai Web Server. Selain 3 server terdapat 2 klien yang digunakan untuk testing oleh Bibah yaitu **GRESIK** dan **SIDOARJO**. Untuk menyambungkan semua jaringan tersebut Bibah memberi router di **SURABAYA**.
 
+Keterangan :
+Terlebih dahulu mengisi file topologi.sh dengan cara :
+```nano topologi.sh```
+
+Lalu isi topologi.sh dengan :
+```
+blablabla
+```
+
+Lalu masing-masing uml di-export proxy-nya agar bisa apt-get update. Kita membuat file dengan nama export.sh yang isinya :
+```
+export http_proxy=”http://DPTSI-564318-23148:7b3c2@proxy.its.ac.id:8080”
+export https_proxy=”http://DPTSI-564318-23148:7b3c2@proxy.its.ac.id:8080”
+export ftp_proxy=”http://DPTSI-564318-23148:7b3c2@proxy.its.ac.id:8080”
+```
+
 **1. Membuat sebuah website utama dengan alamat http://semeruc15.pw**
+Install bind9 pada uml MALANG dengan command :
+``` apt-get install bind9 -y ```
+
+Pada uml MALANG
 
 **2. Alias http://www.semeruc15.pw**
 
