@@ -26,10 +26,15 @@ export ftp_proxy=”http://DPTSI-564318-23148:7b3c2@proxy.its.ac.id:8080”
 ```
 
 **1. Membuat sebuah website utama dengan alamat http://semeruc15.pw**
+
 Install bind9 pada uml MALANG dengan command :
 ``` apt-get install bind9 -y ```
 
-Pada uml MALANG
+Pada uml MALANG membuat domain **http://semeruc15.pw** dengan mengedit file ```named.conf.local``` dengan syntax :
+```nano /etc/bind/named.conf.local```
+
+![1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1.jpg)
+
 
 **2. Alias http://www.semeruc15.pw**
 
