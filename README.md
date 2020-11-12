@@ -31,10 +31,20 @@ Install bind9 pada uml MALANG dengan command :
 ``` apt-get install bind9 -y ```
 
 Pada uml MALANG membuat domain **http://semeruc15.pw** dengan mengedit file ```named.conf.local``` dengan syntax :
+
 ```nano /etc/bind/named.conf.local```
 
 ![1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1.jpg)
 
+Membuat folder ```semeru``` di ```/etc/bind```. Lalu copykan file db.local pada path /etc/bind ke dalam folder ```semeru``` yang baru saja dibuat dan ubah namanya menjadi ```semeruc15.pw```
+
+```cp /etc/bind/db.local /etc/bind/semeru/semeruc15.pw```
+
+Kemudian buka file ```semeruc15.pw``` dan edit seperti gambar berikut :
+
+```nano /etc/bind/semeru/semeruc15.pw```
+
+![1.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1.1.jpg)
 
 **2. Alias http://www.semeruc15.pw**
 
