@@ -10,13 +10,13 @@ Lapres Modul 2 Jarkom
 Semeru adalah salah satu gunung yang terkenal di Jawa Timur. Bibah adalah salah satu juru kunci Semeru. Bibah ingin menyebarkan keindahan Semeru pada dunia sehingga dia membeli 3 buah server yang berada di **MALANG**, **MOJOKERTO** dan **PROBOLINGGO**. Server MALANG akan digunakan sebagai DNS Server Master, **MOJOKERTO** akan digunakan sebagai DNS Server Slave dan **PROBOLINGGO** akan digunakan sebagai Web Server. Selain 3 server terdapat 2 klien yang digunakan untuk testing oleh Bibah yaitu **GRESIK** dan **SIDOARJO**. Untuk menyambungkan semua jaringan tersebut Bibah memberi router di **SURABAYA**.
 
 ### Daftar Soal
-* [No. 1]()
-* [No. 2]()
-* [No. 3]()
-* [No. 4]()
-* [No. 5]()
-* [No. 6]()
-* [No. 7]()
+* [No. 1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#1-membuat-sebuah-website-utama-dengan-alamat-httpsemeruc15pw)
+* [No. 2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
+* [No. 3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
+* [No. 4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
+* [No. 5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
+* [No. 6](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
+* [No. 7](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
 
 Keterangan :
 - Terlebih dahulu mengisi file topologi.sh dengan cara : ```nano topologi.sh```
