@@ -15,7 +15,22 @@ Keterangan :
 
 - Lalu isi topologi.sh dengan :
 ```
-blablabla
+# Switch
+uml_switch -unix switch1 > /dev/null < /dev/null &
+uml_switch -unix switch2 > /dev/null < /dev/null &
+
+# Router
+xterm -T SURABAYA -e linux ubd0=SURABAYA,jarkom umid=SURABAYA eth0=tuntap,,,'ip_tuntap_tiap_kelompok' eth1=daemon,,,switch2 eth2=daemon,,,switch1 mem=96M &
+
+# Server
+xterm -T MALANG -e linux ubd0=MALANG,jarkom umid=MALANG eth0=daemon,,,switch2 mem=128M &
+xterm -T MOJOKERTO -e linux ubd0=MOJOKERTO,jarkom umid=MOJOKERTO eth0=daemon,,,switch2 mem=160M &
+xterm -T PROBOLINGGO -e linux ubd0=PROBOLINGGO,jarkom umid=PROBOLINGGO eth0=daemon,,,switch2 mem=160M &
+
+# Klien
+xterm -T SIDOARJO -e linux ubd0=SIDOARJO,jarkom umid=SIDOARJO eth0=daemon,,,switch1 mem=96M &
+xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch1 mem=96M &
+
 ```
 
 - Lalu masing-masing uml di-export proxy-nya agar bisa apt-get update. Kita membuat file dengan nama export.sh yang isinya :
@@ -30,7 +45,7 @@ export ftp_proxy=”http://DPTSI-564318-23148:7b3c2@proxy.its.ac.id:8080”
 - Install bind9 pada uml MALANG dengan command :
 ``` apt-get install bind9 -y ```
 
-- Pada uml MALANG membuat domain **http://semeruc15.pw** dengan mengedit file ```named.conf.local``` dengan syntax :
+- Pada uml MALANG membuat domain **http://semeruc15.pw** dengan mengedit file **named.conf.local** dengan syntax :
 
 ```
 nano /etc/bind/named.conf.local
@@ -38,13 +53,13 @@ nano /etc/bind/named.conf.local
 
 ![1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1.jpg)
 
-- Membuat folder ```semeru``` di ```/etc/bind```. Lalu copykan file db.local pada path /etc/bind ke dalam folder ```semeru``` yang baru saja dibuat dan ubah namanya menjadi ```semeruc15.pw```
+- Membuat folder **semeru** di **/etc/bind**. Lalu copykan file db.local pada path /etc/bind ke dalam folder **semeru** yang baru saja dibuat dan ubah namanya menjadi **semeruc15.pw**
 
 ```
 cp /etc/bind/db.local /etc/bind/semeru/semeruc15.pw
 ```
 
-- Kemudian buka file ```semeruc15.pw``` dan edit seperti gambar berikut :
+- Kemudian buka file **semeruc15.pw** dan edit seperti gambar berikut :
 
 ```
 nano /etc/bind/semeru/semeruc15.pw
@@ -66,7 +81,7 @@ nano /etc/resolv.conf
 
 ![1.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1%20testing%20client%20ke%20server%20malang.jpg)
 
-- Untuk mencoba koneksi DNS, lakukan ping domain ```semeruc15.pw``` dengan melakukan perintah berikut pada client GRESIK
+- Untuk mencoba koneksi DNS, lakukan ping domain **semeruc15.pw** dengan melakukan perintah berikut pada client GRESIK
 
 ```
 ping semeruc15.pw
@@ -75,6 +90,26 @@ ping semeruc15.pw
 ![1.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1%20testing%20ping%20domain.jpg)
 
 **2. Alias http://www.semeruc15.pw**
+
+Untuk membuat alias kita membuat record CNAME yang mengarah ke domain. 
+
+- Mengubah isi dari file **semeruc15.pw** pada server MALANG dan menambahkan konfigurasi seperti berikut :
+
+![2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/2.jpg)
+
+- Jangan lupa buat restart bind
+
+```
+service bind9 restart
+```
+
+- Lalu cek dengan **ping** www.semeruc15.pw pada client GRESIK
+
+```
+ping www.semeruc15.pw
+```
+
+https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/2%20testing%20ping%20alias.jpg
 
 **3. Subdomain http://penanjakan.semeruc15.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP server PROBOLINGGO**
 
