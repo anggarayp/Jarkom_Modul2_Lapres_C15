@@ -32,33 +32,45 @@ export ftp_proxy=”http://DPTSI-564318-23148:7b3c2@proxy.its.ac.id:8080”
 
 - Pada uml MALANG membuat domain **http://semeruc15.pw** dengan mengedit file ```named.conf.local``` dengan syntax :
 
-```nano /etc/bind/named.conf.local```
+```
+nano /etc/bind/named.conf.local
+```
 
 ![1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1.jpg)
 
 - Membuat folder ```semeru``` di ```/etc/bind```. Lalu copykan file db.local pada path /etc/bind ke dalam folder ```semeru``` yang baru saja dibuat dan ubah namanya menjadi ```semeruc15.pw```
 
-```cp /etc/bind/db.local /etc/bind/semeru/semeruc15.pw```
+```
+cp /etc/bind/db.local /etc/bind/semeru/semeruc15.pw
+```
 
 - Kemudian buka file ```semeruc15.pw``` dan edit seperti gambar berikut :
 
-```nano /etc/bind/semeru/semeruc15.pw```
+```
+nano /etc/bind/semeru/semeruc15.pw
+```
 
 ![1.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1.1.jpg)
 
 - Jangan lupa buat restart bind
 
-```service bind9 restart```
+```
+service bind9 restart
+```
 
 - Pada client GRESIK arahkan nameserver menuju IP MALANG dengan mengedit file resolv.conf dengan mengetikkan perintah
 
-```nano /etc/resolv.conf```
+```
+nano /etc/resolv.conf
+```
 
 ![1.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1%20testing%20client%20ke%20server%20malang.jpg)
 
 - Untuk mencoba koneksi DNS, lakukan ping domain ```semeruc15.pw``` dengan melakukan perintah berikut pada client GRESIK
 
-```ping semeruc15.pw```
+```
+ping semeruc15.pw
+```
 
 ![1.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1%20testing%20ping%20domain.jpg)
 
