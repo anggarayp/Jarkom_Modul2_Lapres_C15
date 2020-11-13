@@ -9,6 +9,15 @@ Lapres Modul 2 Jarkom
 
 Semeru adalah salah satu gunung yang terkenal di Jawa Timur. Bibah adalah salah satu juru kunci Semeru. Bibah ingin menyebarkan keindahan Semeru pada dunia sehingga dia membeli 3 buah server yang berada di **MALANG**, **MOJOKERTO** dan **PROBOLINGGO**. Server MALANG akan digunakan sebagai DNS Server Master, **MOJOKERTO** akan digunakan sebagai DNS Server Slave dan **PROBOLINGGO** akan digunakan sebagai Web Server. Selain 3 server terdapat 2 klien yang digunakan untuk testing oleh Bibah yaitu **GRESIK** dan **SIDOARJO**. Untuk menyambungkan semua jaringan tersebut Bibah memberi router di **SURABAYA**.
 
+### Daftar Soal
+* [No. 1]()
+* [No. 2]()
+* [No. 3]()
+* [No. 4]()
+* [No. 5]()
+* [No. 6]()
+* [No. 7]()
+
 Keterangan :
 - Terlebih dahulu mengisi file topologi.sh dengan cara : ```nano topologi.sh```
 
@@ -49,7 +58,7 @@ Keterangan :
    uml_mconsole PROBOLINGGO halt
    ```
 
-**1. Membuat sebuah website utama dengan alamat http://semeruc15.pw**
+### 1. Membuat sebuah website utama dengan alamat http://semeruc15.pw
 
 - Install bind9 pada uml MALANG dengan command : ``` apt-get install bind9 -y ```
 
@@ -97,7 +106,7 @@ Keterangan :
 
   ![1.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/1%20testing%20ping%20domain.jpg)
 
-**2. Alias http://www.semeruc15.pw**
+### 2. Alias http://www.semeruc15.pw
 
 Untuk membuat alias kita membuat record CNAME yang mengarah ke domain. 
 
@@ -119,7 +128,7 @@ Untuk membuat alias kita membuat record CNAME yang mengarah ke domain.
 
   ![2.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/2%20testing%20ping%20alias.jpg)
 
-**3. Subdomain http://penanjakan.semeruc15.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP server PROBOLINGGO**
+### 3. Subdomain http://penanjakan.semeruc15.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP server PROBOLINGGO
 
 Subdomain umumnya mengacu ke suatu alamat fisik di sebuah situs. Kita membuat domain http://penanjakan.semeruc15.pw yang mengacu ke semeruc15.pw sebagai domain induknya.
 
@@ -145,7 +154,7 @@ Subdomain umumnya mengacu ke suatu alamat fisik di sebuah situs. Kita membuat do
 
   ![3.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/3%20testing%20subdomain%20penanjakan.jpg)
 
-**4. Dibuatkan reverse domain untuk domain utama.**
+### 4. Dibuatkan reverse domain untuk domain utama.
 
 Reverse domain digunakan untuk menerjemahkan alamat IP ke alamat domain yang sudah diterjemahkan sebelumnya.
 
@@ -177,7 +186,7 @@ Reverse domain digunakan untuk menerjemahkan alamat IP ke alamat domain yang sud
 
   ![4.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/4%20testing%20host.jpg)
 
-**5. Dibuatkan DNS Server Slave pada MOJOKERTO agar tidak terganggu menikmati keindahan Semer pada website**
+### 5. Dibuatkan DNS Server Slave pada MOJOKERTO agar tidak terganggu menikmati keindahan Semeru pada website
 
 DNS Slave adalah DNS cadangan yang akan diakses jika server DNS utama mengalami kegagalan.
 
@@ -231,6 +240,6 @@ DNS Slave adalah DNS cadangan yang akan diakses jika server DNS utama mengalami 
 
   ![5.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/5.2.jpg)
 
-**6. Membuat subdomain dengan alamat http://gunung.semeruc15.pw yang didelegasikan pada server MOJOKERKTO dan mengarah ke IP Server PROBOLINGGO.**
+### 6. Membuat subdomain dengan alamat http://gunung.semeruc15.pw yang didelegasikan pada server MOJOKERKTO dan mengarah ke IP Server PROBOLINGGO.
 
-**7. Membuat subdomain dengan nama http://naik.gunung.semeruc15.pw, domain ini diarahkan ke IP Server PROBOLINGGO**
+### 7. Membuat subdomain dengan nama http://naik.gunung.semeruc15.pw, domain ini diarahkan ke IP Server PROBOLINGGO
