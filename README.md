@@ -12,11 +12,11 @@ Semeru adalah salah satu gunung yang terkenal di Jawa Timur. Bibah adalah salah 
 ### Daftar Soal
 * [No. 1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#1-membuat-sebuah-website-utama-dengan-alamat-httpsemeruc15pw)
 * [No. 2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
-* [No. 3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
-* [No. 4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
-* [No. 5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
-* [No. 6](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
-* [No. 7](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#2-alias-httpwwwsemeruc15pw)
+* [No. 3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#3-subdomain-httppenanjakansemeruc15pw-yang-diatur-dns-nya-pada-malang-dan-mengarah-ke-ip-server-probolinggo)
+* [No. 4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#4-dibuatkan-reverse-domain-untuk-domain-utama)
+* [No. 5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#5-dibuatkan-dns-server-slave-pada-mojokerto-agar-tidak-terganggu-menikmati-keindahan-semeru-pada-website)
+* [No. 6](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#6-membuat-subdomain-dengan-alamat-httpgunungsemeruc15pw-yang-didelegasikan-pada-server-mojokerkto-dan-mengarah-ke-ip-server-probolinggo)
+* [No. 7](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#7-membuat-subdomain-dengan-nama-httpnaikgunungsemeruc15pw-domain-ini-diarahkan-ke-ip-server-probolinggo)
 
 Keterangan :
 - Terlebih dahulu mengisi file topologi.sh dengan cara : ```nano topologi.sh```
