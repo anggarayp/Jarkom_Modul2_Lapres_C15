@@ -272,9 +272,5 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
  - Lalu edit file /etc/bind/named.conf.local menjadi seperti gambar berikut :
  
    ![6.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.4.jpg)
-   
-  - Buat folder **delegasi**. Copy db.local ke direktori pucang dan edit namanya menjadi **gunung.semeruc15.pw.** Edit file tersebut seperti gambar berikut :
-    
-    ![6.5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.5%20%26%207.jpg)
   
 ### 7. Membuat subdomain dengan nama http://naik.gunung.semeruc15.pw, domain ini diarahkan ke IP Server PROBOLINGGO
