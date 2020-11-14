@@ -288,3 +288,4 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     ```
     ping naik.gunung.semeruc15.pw
     ```
+   ![7.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/7%20testing%20ping.jpg)
