@@ -325,3 +325,21 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     ```
   - Ketika **semeruc15.pw** diakses, akan menampilkan seperti di gambar berikut
     ![8.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8.1.jpg)
+    
+### 9. Mengubah **semeruc15.pw/index.php/home** menjadi **semeruc15.pw/home**
+-- Konfigurasi pada server PROBOLINGGO
+  - Aktifkan module rewrite 
+    ```
+    a2enmod rewrite
+    ```
+  - Pindah ke direktori **/etc/apache2/sites-available** dan edit file **semeruc15.pw.conf**
+    ![9.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/9%20di%20semeruc15pw.jpg)  
+  - Pindah ke direktori **/var/www/semeruc15.pw** dan buat file **.htaccess** yang berisi
+    ![9.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/9%20di%20semeruc15pw.jpg)  
+  - Restart apache
+    ```
+    service apache2 restart
+    ```
+  - Ketika **semeruc15.pw/home** diakses, akan menampilkan seperti di gambar berikut
+    ![9.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/9.2.jpg)
+  
