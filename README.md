@@ -369,3 +369,16 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
   - Ketika **penanjakan.semeruc15.pw** diakses, akan menampilkan seperti di gambar berikut
     ![10.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/10.1.jpg)
     
+### 11. Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
+-- Konfigurasi pada Server PROBOLINGGO
+  - Edit file **penanjakan.semeruc15.pw.conf**
+    ![11.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.jpg)
+  - Restart apache
+    ```
+    service apache2 restart
+    ```
+  - Ketika dibuka, hasilnya akan seperti gambar dibawah ini
+    ![11.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.1.jpg)
+    ![11.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.2.jpg)
+    ![11.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.3.jpg)
+    ![11.5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.4.jpg)
