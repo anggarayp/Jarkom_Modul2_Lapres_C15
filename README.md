@@ -17,7 +17,10 @@ Semeru adalah salah satu gunung yang terkenal di Jawa Timur. Bibah adalah salah 
 * [No. 5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#5-dibuatkan-dns-server-slave-pada-mojokerto-agar-tidak-terganggu-menikmati-keindahan-semeru-pada-website)
 * [No. 6](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#6-membuat-subdomain-dengan-alamat-httpgunungsemeruc15pw-yang-didelegasikan-pada-server-mojokerkto-dan-mengarah-ke-ip-server-probolinggo)
 * [No. 7](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15#7-membuat-subdomain-dengan-nama-httpnaikgunungsemeruc15pw-domain-ini-diarahkan-ke-ip-server-probolinggo)
-* [No. 8]
+* [No. 8](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#8-mengatur-web-server-dengan-domain-semeruc15pw-dan-memiliki-document-root-pada-varwwwsemeruc15pw)
+* [No. 9](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#9-mengubah-semeruc15pwindexphphome-menjadi-semeruc15pwhome)
+* [No. 10](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#10-setting-penanjakansemeruc15pw-agar-bisa-diakses)
+* [No. 11](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#10-setting-penanjakansemeruc15pw-agar-bisa-diakses)
 
 Keterangan :
 - Terlebih dahulu mengisi file topologi.sh dengan cara : ```nano topologi.sh```
