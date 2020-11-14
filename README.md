@@ -345,27 +345,27 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
  
  ### 10. Setting **penanjakan.semeruc15.pw** agar bisa diakses
  -- Konfigurasi pada server PROBOLINGO
-    - Pindah ke direktori **/etc/apache2/sites-available** dan copy file **000-default.conf** dan rename dengan nama **penanjakan.semeruc15.pw.conf**
+  - Pindah ke direktori **/etc/apache2/sites-available** dan copy file **000-default.conf** dan rename dengan nama **penanjakan.semeruc15.pw.conf**
     ```
     cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/penanjakan.semeruc15.pw.conf
     ```
-    - Edit file **penanjakan.semeruc15.pw.conf**
+  - Edit file **penanjakan.semeruc15.pw.conf**
     ![10.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/10.jpg)
-    - Aktifkan site dengan command
+  - Aktifkan site dengan command
     ```
     a2ensite penanjakan.semeruc15.pw
     ```
-    - Pindah ke direktori **/var/www**
-    - Download file website dengan cara
+  - Pindah ke direktori **/var/www**
+  - Download file website dengan cara
     ```
     wget 10.151.36.202/penanjakan.semeru.pw.zip
     ```
-    - Unzip file yang sudah didownload dan ganti nama file
+  - Unzip file yang sudah didownload dan ganti nama file
     ![10.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8%209%2014.jpg)
-    - Restart apache
+  - Restart apache
     ```
     service apache2 restart
     ```
-    - Ketika **penanjakan.semeruc15.pw** diakses, akan menampilkan seperti di gambar berikut
+  - Ketika **penanjakan.semeruc15.pw** diakses, akan menampilkan seperti di gambar berikut
     ![10.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/10.1.jpg)
     
