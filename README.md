@@ -130,7 +130,7 @@ Untuk membuat alias kita membuat record CNAME yang mengarah ke domain.
 
 ### 3. Subdomain http://penanjakan.semeruc15.pw yang diatur DNS-nya pada MALANG dan mengarah ke IP server PROBOLINGGO
 
-Subdomain umumnya mengacu ke suatu alamat fisik di sebuah situs. Kita membuat domain http://penanjakan.semeruc15.pw yang mengacu ke semeruc15.pw sebagai domain induknya.
+Subdomain umumnya mengacu ke suatu alamat fisik di sebuah situs. Kita membuat subdomain http://penanjakan.semeruc15.pw yang mengacu ke semeruc15.pw sebagai domain induknya.
 
 - Edit file **/etc/bind/semeru/semeruc15.pw** lalu tambahkan subdomain untuk semeruc15.pw yang mengarah ke IP PROBOLINGGO.
 
@@ -241,5 +241,40 @@ DNS Slave adalah DNS cadangan yang akan diakses jika server DNS utama mengalami 
   ![5.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/5.2.jpg)
 
 ### 6. Membuat subdomain dengan alamat http://gunung.semeruc15.pw yang didelegasikan pada server MOJOKERKTO dan mengarah ke IP Server PROBOLINGGO.
+Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DNS baru.
 
+-- Konfigurasi di server MALANG
+
+ - Mengubah isi dari file **/etc/bind/semeru/semeruc15.pw** pada server MALANG seperti gambar berikut :
+ 
+   ![6](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.jpg)
+ 
+ - Lalu edit file **/etc/bind/named.conf.options** dengan comment **dnssec-validation auto;** dan tambahkan ```allow-query{any;};```. Lebih lengkapnya seperti gambar berikut :
+ 
+   ![6.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.1.jpg)
+ 
+ - Edit file **/etc/bind/named.conf.local** seperti gambar berikut :
+ 
+   ![6.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.2.jpg)
+ 
+ - Jangan lupa buat restart bind
+
+    ```
+    service bind9 restart
+    ```
+
+-- Konfigurasi di server MOJOKERTO
+
+ - Edit file **/etc/bind/named.conf.options** dengan comment **dnssec-validation auto;** dan tambahkan ```allow-query{any;};```. Lebih lengkapnya seperti gambar berikut :
+ 
+   ![6.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.3.jpg)
+   
+ - Lalu edit file /etc/bind/named.conf.local menjadi seperti gambar berikut :
+ 
+   ![6.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.4.jpg)
+   
+  - Buat folder **delegasi**. Copy db.local ke direktori pucang dan edit namanya menjadi **gunung.semeruc15.pw.** Edit file tersebut seperti gambar berikut :
+    
+    ![6.5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.5.jpg)
+  
 ### 7. Membuat subdomain dengan nama http://naik.gunung.semeruc15.pw, domain ini diarahkan ke IP Server PROBOLINGGO
