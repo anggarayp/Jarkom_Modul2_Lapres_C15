@@ -274,3 +274,17 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
    ![6.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.4.jpg)
   
 ### 7. Membuat subdomain dengan nama http://naik.gunung.semeruc15.pw, domain ini diarahkan ke IP Server PROBOLINGGO
+-- Konfigurasi di server MOJOKERTO
+
+ - Mengubah isi dari file **/etc/bind/delegasi/gunung.semeruc15.pw** seperti gambar berikut :
+ 
+   ![7.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.5%20%26%207.jpg)
+ - Lakukan restart service bind
+    ```
+    service bind9 restart
+    ```
+-- Testing
+  - Coba ping di server GRESIK
+    ```
+    ping naik.gunung.semeruc15.pw
+    ```
