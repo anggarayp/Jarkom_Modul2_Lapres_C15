@@ -20,7 +20,7 @@ Semeru adalah salah satu gunung yang terkenal di Jawa Timur. Bibah adalah salah 
 * [No. 8](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#8-mengatur-web-server-dengan-domain-semeruc15pw-dan-memiliki-document-root-pada-varwwwsemeruc15pw)
 * [No. 9](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#9-mengubah-semeruc15pwindexphphome-menjadi-semeruc15pwhome)
 * [No. 10](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#10-setting-penanjakansemeruc15pw-agar-bisa-diakses)
-* [No. 11](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#10-setting-penanjakansemeruc15pw-agar-bisa-diakses)
+* [No. 11](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#11-pada-folder-public-dibolehkan-directory-listing-namun-untuk-folder-yang-berada-di-dalamnya-tidak-dibolehkan)
 
 Keterangan :
 - Terlebih dahulu mengisi file topologi.sh dengan cara : ```nano topologi.sh```
