@@ -186,7 +186,7 @@ Reverse domain digunakan untuk menerjemahkan alamat IP ke alamat domain yang sud
 
   ![4.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/4.1.jpg)
   
- - Jangan lupa buat restart bind
+- Jangan lupa buat restart bind
 
   ```
   service bind9 restart
