@@ -385,3 +385,31 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     ![11.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.2.jpg)
     ![11.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.3.jpg)
     ![11.5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.4.jpg)
+
+### 14. Setting Web http://naik.gunung.semeruyyy.pw yang hanya bisa diakses menggunakan port 8888.
+-- Konfigurasi pada Server PROBOLINGGO
+  - Pindah ke direktori **/etc/apache2/sites-available** dan copy file **000-default.conf** dan rename dengan nama **naik.gunung.semeruc15.pw.conf**
+    ```
+    cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/naik.gunung.semeruc15.pw.conf
+    ```
+  - Edit file **naik.gunung.semeruc15.pw.conf**, ganti virtual host dari :80 menjadi :8888. Lalu tambahkan server name dan arahkan document root ke /var/www/naik.gunung.semeruc15.pw
+    ![14.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/14.1.jpg)
+  - Pindah ke direktori **/etc/apache2** dan edit file **ports.conf** agar bisa mengkases port 8888
+    ![14.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/14.2.jpg)
+  - Aktifkan site dengan command
+    ```
+    a2ensite naik.gunung.semeruc15.pw
+    ```
+  - Pindah ke direktori **/var/www**
+  - Download file website dengan cara
+    ```
+    wget 10.151.36.202/naik.gunung.semeru.pw.zip
+    ```
+  - Unzip file yang sudah didownload dan ganti nama file
+    ![14.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8%209%2014.jpg)
+  - Restart apache
+    ```
+    service apache2 restart
+    ```
+  - Hasilnya, web naik.gunung.semeruc15.pw hanya bisa diakses port 8888 dan akan menampilkan seperti gambar dibawah ini
+    ![14.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/14.4.jpg)
