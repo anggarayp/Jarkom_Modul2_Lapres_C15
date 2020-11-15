@@ -21,12 +21,12 @@ Semeru adalah salah satu gunung yang terkenal di Jawa Timur. Bibah adalah salah 
 * [No. 9](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#9-mengubah-semeruc15pwindexphphome-menjadi-semeruc15pwhome)
 * [No. 10](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#10-setting-penanjakansemeruc15pw-agar-bisa-diakses)
 * [No. 11](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#11-pada-folder-public-dibolehkan-directory-listing-namun-untuk-folder-yang-berada-di-dalamnya-tidak-dibolehkan)
-* [No. 12]()
-* [No. 13]()
+* [No. 12](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#12-untuk-mengatasi-http-error-code-404-disediakan-file-404html-pada-folder-errors-untuk-mengganti-error-default-404-dari-apache)
+* [No. 13](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#13-untuk-mengakses-file-assets-javascript-awalnya-harus-menggunakan-url-httppenanjakansemeruyyypwpublicjavascripts-lalu-dibuatkan-konfigurasi-virtual-host-agar-ketika-mengakses-file-assets-menjadi-httppenanjakansemeruyyypwjs)
 * [No. 14](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#14-setting-web-httpnaikgunungsemeruyyypw-yang-hanya-bisa-diakses-menggunakan-port-8888)
-* [No. 15]()
+* [No. 15](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#15-bibah-meminta-kamu-membuat-web-httpnaikgunungsemeruyyypw-agar-diberi-autentikasi-password-dengan-username-semeru-dan-password-kuynaikgunung-supaya-aman-dan-tidak-sembarang-orang-bisa-mengaksesnya)
 * [No. 16](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#16-mengarahkan-ip-probolinggo-ke-web-semeruc15pw)
-* [No. 17]()
+* [No. 17](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#17-karena-pengunjung-pada-varwwwpenanjakansemeruyyypwpublicimages-sangat-banyak-maka-semua-request-gambar-yang-memiliki-substring-semeru-akan-diarahkan-menuju-semerujpg)
 
 Keterangan :
 - Terlebih dahulu mengisi file topologi.sh dengan cara : ```nano topologi.sh```
@@ -324,7 +324,11 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     
     ![8.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8.jpg)
   
-  - Aktifkan site dengan command ```a2ensite semeruc15.pw```
+  - Aktifkan site dengan command 
+    
+    ```
+    a2ensite semeruc15.pw
+    ```
     
     ![8.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8.2.jpg)
   
@@ -336,7 +340,7 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     
     ![8.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8%209%2014.jpg)
   
-  - Restart apache ```service apache2 restart```
+  - Restart apache : ```service apache2 restart```
   
   - Ketika **semeruc15.pw** diakses, akan menampilkan seperti di gambar berikut
     
@@ -346,7 +350,10 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
 
 -- Konfigurasi pada server PROBOLINGGO
   
-  - Aktifkan module rewrite ```a2enmod rewrite```
+  - Aktifkan module rewrite 
+    ```
+    a2enmod rewrite
+    ```
   
   - Pindah ke direktori **/etc/apache2/sites-available** dan edit file **semeruc15.pw.conf**
     
@@ -356,7 +363,7 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     
     ![9.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/9%20di%20semeruc15pw.jpg)  
   
-  - Restart apache ```service apache2 restart```
+  - Restart apache : ```service apache2 restart```
   
   - Ketika **semeruc15.pw/home** diakses, akan menampilkan seperti di gambar berikut
     
@@ -376,7 +383,11 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     
     ![10.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/10.jpg)
   
-  - Aktifkan site dengan command ```a2ensite penanjakan.semeruc15.pw```
+  - Aktifkan site dengan command 
+    
+    ```
+    a2ensite penanjakan.semeruc15.pw
+    ```
   
   - Pindah ke direktori **/var/www**
   
@@ -386,7 +397,7 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     
     ![10.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8%209%2014.jpg)
   
-  - Restart apache ```service apache2 restart```
+  - Restart apache : ```service apache2 restart```
   
   - Ketika **penanjakan.semeruc15.pw** diakses, akan menampilkan seperti di gambar berikut
     
@@ -428,10 +439,15 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
 
 ### 13. Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruyyy.pw/public/javascripts. Lalu dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruyyy.pw/js.
 
-- Edit file penanjakan.semeruc15.pw.conf seperti berikut: 
+- Edit file penanjakan.semeruc15.pw.conf 
 
   ```
   nano /etc/apache2/sites-available/penanjakan.semeruc15.pw.conf
+  ```
+- Tambahkan :
+
+  ```
+  Alias "/js" "/var/www/penanajakan.semeruc15.pw/public/javascripts/"
   ```
 
   ![13](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/13.jpg)
@@ -440,8 +456,8 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
 
   ![13.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/13.1.jpg)
 
-
 ### 14. Setting Web http://naik.gunung.semeruyyy.pw yang hanya bisa diakses menggunakan port 8888.
+
 -- Konfigurasi pada Server PROBOLINGGO
   
   - Pindah ke direktori **/etc/apache2/sites-available** dan copy file **000-default.conf** dan rename dengan nama **naik.gunung.semeruc15.pw.conf**
@@ -472,7 +488,7 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     
     ![14.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8%209%2014.jpg)
   
-  - Restart apache ```service apache2 restart```
+  - Restart apache : ```service apache2 restart```
   
   - Hasilnya, web naik.gunung.semeruc15.pw hanya bisa diakses port 8888 dan akan menampilkan seperti gambar dibawah ini
     
@@ -488,7 +504,7 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
 
 - Lalu isi passwordnya dengan ```kuynaikgunung```. Jika sudah membuat username, kita bisa mengeceknya di file .htpasswd :
 
-  ![15](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/15.jpg)
+  ![15](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/15.png)
 
 - Kemudian jika kita membuka **naik.gunung.semeruc15.pw:8888**, maka tampilannya akan seperti berikut :
 
@@ -510,7 +526,7 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     
     ![16.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/16.1.jpg)
   
-  - Restart apache ```service apache2 restart```
+  - Restart apache : ```service apache2 restart```
   
   - Hasilnya, jika kita mencoba akses IP PROBOLINGGO, akan diredirect ke semeruc15.pw
     
