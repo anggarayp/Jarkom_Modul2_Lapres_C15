@@ -251,7 +251,7 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
 
  - Mengubah isi dari file **/etc/bind/semeru/semeruc15.pw** pada server MALANG seperti gambar berikut :
  
-   ![6](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.jpg)
+   ![6](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.png)
  
  - Lalu edit file **/etc/bind/named.conf.options** dengan comment **dnssec-validation auto;** dan tambahkan ```allow-query{any;};```. Lebih lengkapnya seperti gambar berikut :
  
