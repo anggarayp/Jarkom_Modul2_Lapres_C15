@@ -21,6 +21,12 @@ Semeru adalah salah satu gunung yang terkenal di Jawa Timur. Bibah adalah salah 
 * [No. 9](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#9-mengubah-semeruc15pwindexphphome-menjadi-semeruc15pwhome)
 * [No. 10](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#10-setting-penanjakansemeruc15pw-agar-bisa-diakses)
 * [No. 11](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#11-pada-folder-public-dibolehkan-directory-listing-namun-untuk-folder-yang-berada-di-dalamnya-tidak-dibolehkan)
+* [No. 12]()
+* [No. 13]()
+* [No. 14](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#14-setting-web-httpnaikgunungsemeruyyypw-yang-hanya-bisa-diakses-menggunakan-port-8888)
+* [No. 15]()
+* [No. 16](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/README.md#16-mengarahkan-ip-probolinggo-ke-web-semeruc15pw)
+* [No. 17]()
 
 Keterangan :
 - Terlebih dahulu mengisi file topologi.sh dengan cara : ```nano topologi.sh```
@@ -245,6 +251,7 @@ DNS Slave adalah DNS cadangan yang akan diakses jika server DNS utama mengalami 
   ![5.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/5.2.jpg)
 
 ### 6. Membuat subdomain dengan alamat http://gunung.semeruc15.pw yang didelegasikan pada server MOJOKERKTO dan mengarah ke IP Server PROBOLINGGO.
+
 Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DNS baru.
 
 -- Konfigurasi di server MALANG
@@ -276,156 +283,271 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
  - Lalu edit file /etc/bind/named.conf.local menjadi seperti gambar berikut :
  
    ![6.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.4.jpg)
+
 -- Testing 
-  - Coba ping di server GRESIK
-    ```
-    ping gunung.semeruc15.pw
-    ```
+  
+  - Coba ping di server GRESIK ```ping gunung.semeruc15.pw```
+    
     ![6.5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6%20testing%20ping.jpg)
   
 ### 7. Membuat subdomain dengan nama http://naik.gunung.semeruc15.pw, domain ini diarahkan ke IP Server PROBOLINGGO
+
 -- Konfigurasi di server MOJOKERTO
 
  - Mengubah isi dari file **/etc/bind/delegasi/gunung.semeruc15.pw** seperti gambar berikut :
  
    ![7.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/6.5%20%26%207.jpg)
- - Lakukan restart service bind
-    ```
-    service bind9 restart
-    ```
+ 
+ - Lakukan restart service bind ```service bind9 restart```
+
 -- Testing
-  - Coba ping di server GRESIK
-    ```
-    ping naik.gunung.semeruc15.pw
-    ```
+  
+  - Coba ping di server GRESIK ```ping naik.gunung.semeruc15.pw```
+   
    ![7.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/7%20testing%20ping.jpg)
    
 ### 8. Mengatur web server dengan domain semeruc15.pw dan memiliki document root pada /var/www/semeruc15.pw
+
 -- Konfigurasi Server PROBOLINGGO
+  
   - Install apache pada uml PROBOLINGGO dengan command : ``` apt-get install apache2 ```
+  
   - Install php pada uml PROBOLINGGO dengan command : ``` apt-get install php ```
+  
   - Pindah ke direktori **/etc/apache2/sites-available** dan copy file **000-default.conf** dan rename dengan nama **semeruc15.pw.conf**
+    
     ```
     cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/semeruc15.pw.conf
     ```
+  
   - Edit file **semeruc15.pw.conf**
+    
     ![8.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8.jpg)
-  - Aktifkan site dengan command
-    ```
-    a2ensite semeruc15.pw
-    ```
+  
+  - Aktifkan site dengan command ```a2ensite semeruc15.pw```
+    
     ![8.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8.2.jpg)
+  
   - Pindah ke direktori **/var/www**
-  - Download file website dengan cara
-    ```
-    wget 10.151.36.202/semeru.pw.zip
-    ```
+  
+  - Download file website dengan cara ```wget 10.151.36.202/semeru.pw.zip```
+  
   - Unzip file yang sudah didownload dan ganti nama file
+    
     ![8.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8%209%2014.jpg)
-  - Restart apache
-    ```
-    service apache2 restart
-    ```
+  
+  - Restart apache ```service apache2 restart```
+  
   - Ketika **semeruc15.pw** diakses, akan menampilkan seperti di gambar berikut
+    
     ![8.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8.1.jpg)
     
 ### 9. Mengubah **semeruc15.pw/index.php/home** menjadi **semeruc15.pw/home**
+
 -- Konfigurasi pada server PROBOLINGGO
-  - Aktifkan module rewrite 
-    ```
-    a2enmod rewrite
-    ```
+  
+  - Aktifkan module rewrite ```a2enmod rewrite```
+  
   - Pindah ke direktori **/etc/apache2/sites-available** dan edit file **semeruc15.pw.conf**
+    
     ![9.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/9%20di%20semeruc15pw.jpg)  
+  
   - Pindah ke direktori **/var/www/semeruc15.pw** dan buat file **.htaccess** yang berisi
+    
     ![9.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/9%20di%20semeruc15pw.jpg)  
-  - Restart apache
-    ```
-    service apache2 restart
-    ```
+  
+  - Restart apache ```service apache2 restart```
+  
   - Ketika **semeruc15.pw/home** diakses, akan menampilkan seperti di gambar berikut
+    
     ![9.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/9.2.jpg)
  
  ### 10. Setting **penanjakan.semeruc15.pw** agar bisa diakses
+ 
  -- Konfigurasi pada server PROBOLINGO
+  
   - Pindah ke direktori **/etc/apache2/sites-available** dan copy file **000-default.conf** dan rename dengan nama **penanjakan.semeruc15.pw.conf**
+    
     ```
     cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/penanjakan.semeruc15.pw.conf
     ```
+  
   - Edit file **penanjakan.semeruc15.pw.conf**
+    
     ![10.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/10.jpg)
-  - Aktifkan site dengan command
-    ```
-    a2ensite penanjakan.semeruc15.pw
-    ```
+  
+  - Aktifkan site dengan command ```a2ensite penanjakan.semeruc15.pw```
+  
   - Pindah ke direktori **/var/www**
-  - Download file website dengan cara
-    ```
-    wget 10.151.36.202/penanjakan.semeru.pw.zip
-    ```
+  
+  - Download file website dengan cara ```wget 10.151.36.202/penanjakan.semeru.pw.zip```
+  
   - Unzip file yang sudah didownload dan ganti nama file
+    
     ![10.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8%209%2014.jpg)
-  - Restart apache
-    ```
-    service apache2 restart
-    ```
+  
+  - Restart apache ```service apache2 restart```
+  
   - Ketika **penanjakan.semeruc15.pw** diakses, akan menampilkan seperti di gambar berikut
+    
     ![10.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/10.1.jpg)
     
 ### 11. Pada folder /public dibolehkan directory listing namun untuk folder yang berada di dalamnya tidak dibolehkan.
+
 -- Konfigurasi pada Server PROBOLINGGO
+  
   - Edit file **penanjakan.semeruc15.pw.conf**
+    
     ![11.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.jpg)
-  - Restart apache
-    ```
-    service apache2 restart
-    ```
+  
+  - Restart apache ```service apache2 restart```
+  
   - Ketika dibuka, hasilnya akan seperti gambar dibawah ini
+    
     ![11.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.1.jpg)
+    
     ![11.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.2.jpg)
+    
     ![11.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.3.jpg)
+    
     ![11.5](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/11.4.jpg)
+    
+### 12. Untuk mengatasi HTTP Error code 404, disediakan file 404.html pada folder /errors untuk mengganti error default 404 dari Apache.
+
+- Edit file penanjakan.semeruc15.pw.conf seperti berikut: 
+
+  ```
+  nano /etc/apache2/sites-available/penanjakan.semeruc15.pw.conf
+  ```
+  
+  ![12](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/12.jpg)
+  
+- Jadi jika ketika membuka websitenya akan muncul seperti berikut yang mengganti error default 404 dari apache :
+
+  ![12.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/12.1.jpg)
+
+### 13. Untuk mengakses file assets javascript awalnya harus menggunakan url http://penanjakan.semeruyyy.pw/public/javascripts. Lalu dibuatkan konfigurasi virtual host agar ketika mengakses file assets menjadi http://penanjakan.semeruyyy.pw/js.
+
+- Edit file penanjakan.semeruc15.pw.conf seperti berikut: 
+
+  ```
+  nano /etc/apache2/sites-available/penanjakan.semeruc15.pw.conf
+  ```
+
+  ![13](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/13.jpg)
+
+- Jika kita buka **penanjakan.semeruc15.pw/js/** maka akan muncul seperti berikut :
+
+  ![13.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/13.1.jpg)
+
 
 ### 14. Setting Web http://naik.gunung.semeruyyy.pw yang hanya bisa diakses menggunakan port 8888.
 -- Konfigurasi pada Server PROBOLINGGO
+  
   - Pindah ke direktori **/etc/apache2/sites-available** dan copy file **000-default.conf** dan rename dengan nama **naik.gunung.semeruc15.pw.conf**
+    
     ```
     cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/naik.gunung.semeruc15.pw.conf
     ```
+    
   - Edit file **naik.gunung.semeruc15.pw.conf**, ganti virtual host dari :80 menjadi :8888. Lalu tambahkan server name dan arahkan document root ke /var/www/naik.gunung.semeruc15.pw
+    
     ![14.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/14.1.jpg)
+  
   - Pindah ke direktori **/etc/apache2** dan edit file **ports.conf** agar bisa mengkases port 8888
+    
     ![14.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/14.2.jpg)
+  
   - Aktifkan site dengan command
+    
     ```
     a2ensite naik.gunung.semeruc15.pw
     ```
+  
   - Pindah ke direktori **/var/www**
-  - Download file website dengan cara
-    ```
-    wget 10.151.36.202/naik.gunung.semeru.pw.zip
-    ```
+  
+  - Download file website dengan cara ```wget 10.151.36.202/naik.gunung.semeru.pw.zip```
+  
   - Unzip file yang sudah didownload dan ganti nama file
+    
     ![14.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/8%209%2014.jpg)
-  - Restart apache
-    ```
-    service apache2 restart
-    ```
+  
+  - Restart apache ```service apache2 restart```
+  
   - Hasilnya, web naik.gunung.semeruc15.pw hanya bisa diakses port 8888 dan akan menampilkan seperti gambar dibawah ini
+    
     ![14.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/14.4.jpg)
+    
+### 15. Bibah meminta kamu membuat web http://naik.gunung.semeruyyy.pw agar diberi autentikasi password dengan username “semeru” dan password “kuynaikgunung” supaya aman dan tidak sembarang orang bisa mengaksesnya.
+
+- Kita harus membuat sebuah username dan password di server PROBOLINGGO dengan cara :
+
+  ```
+  htpasswd -c /etc/apache2/.htpasswd semeru
+  ```
+
+- Lalu isi passwordnya dengan ```kuynaikgunung```. Jika sudah membuat username, kita bisa mengeceknya di file .htpasswd :
+
+  ![15](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/15.jpg)
+
+- Kemudian jika kita membuka **naik.gunung.semeruc15.pw:8888**, maka tampilannya akan seperti berikut :
+
+  ![15.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/15.1.jpg)
+
+  ![15.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/15.2.jpg)
 
 ### 16. Mengarahkan IP PROBOLINGGO ke web semeruc15.pw
-- Konfigurasi pada Server PROBOLINGGO
+
+-- Konfigurasi pada Server PROBOLINGGO
+  
   - Pindah ke direktori **/etc/apache2/sites-available** dan buka file **000-default.conf**
+  
   - Tambahkan perintah redirect seperti dibawah ini
+    
     ```
     redirect permanent / http://semeruc15.pw
     ```
+    
     ![16.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/16.1.jpg)
-  - Restart apache
-    ```
-    service apache2 restart
-    ```
+  
+  - Restart apache ```service apache2 restart```
+  
   - Hasilnya, jika kita mencoba akses IP PROBOLINGGO, akan diredirect ke semeruc15.pw
+    
     ![16.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/16.2.jpg)
+    
     ![16.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/16.3.jpg)
+
+### 17. Karena pengunjung pada /var/www/penanjakan.semeruyyy.pw/public/images sangat banyak maka semua request gambar yang memiliki substring “semeru” akan diarahkan menuju semeru.jpg.
+
+- Edit file .htaccess :
+
+  ```
+  nano /var/www/penanjakan.semeruc15.pw/.htaccess
+  ```
+
+- Edit dengan syntax :
+
+  ```
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule ^/?(.*)semeru(.*)\.jpg$ /public/images/semeru.jpg [R=301,L]
+  ```
+  
+  ![17](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/17%20var%20www%20penanjakan.jpg)
+  
+- Edit file penanjakan.semeruc15.pw.conf seperti berikut: 
+
+  ```
+  nano /etc/apache2/sites-available/penanjakan.semeruc15.pw.conf
+  ```
+
+  ![17.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/17.1.jpg)
+  
+- Jika kita membuka url seperti ini :
+
+  ![17.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/17.3.jpg)
+  
+  Maka akan keluar seperti ini :
+  
+  ![17.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/17.4.jpg)
