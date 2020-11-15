@@ -413,3 +413,19 @@ Delegasi subdomain merupakan pemberian wewenaang atas sebuah subdomain kepada DN
     ```
   - Hasilnya, web naik.gunung.semeruc15.pw hanya bisa diakses port 8888 dan akan menampilkan seperti gambar dibawah ini
     ![14.4](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/14.4.jpg)
+
+### 16. Mengarahkan IP PROBOLINGGO ke web semeruc15.pw
+- Konfigurasi pada Server PROBOLINGGO
+  - Pindah ke direktori **/etc/apache2/sites-available** dan buka file **000-default.conf**
+  - Tambahkan perintah redirect seperti dibawah ini
+    ```
+    redirect permanent / http://semeruc15.pw
+    ```
+    ![16.1](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/16.1.jpg)
+  - Restart apache
+    ```
+    service apache2 restart
+    ```
+  - Hasilnya, jika kita mencoba akses IP PROBOLINGGO, akan diredirect ke semeruc15.pw
+    ![16.2](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/16.2.jpg)
+    ![16.3](https://github.com/anggarayp/Jarkom_Modul2_Lapres_C15/blob/main/Screenshots/16.3.jpg)
